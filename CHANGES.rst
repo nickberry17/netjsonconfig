@@ -10,6 +10,7 @@ Version 0.9.0 [unreleased]
   This change is backward incompatible if the same type of configuration
   was achieved using a workaround, in these cases the configuration
   will have to be upgraded to use the new format.
+- [change] added support for new dialup interface type: modemmanager
 
 Version 0.8.2 [2020-08-17]
 --------------------------

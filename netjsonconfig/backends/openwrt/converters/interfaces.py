@@ -276,8 +276,9 @@ class Interfaces(OpenWrtConverter):
     def __get_special_interface_type(self, interface):
         username = interface.get('username', False)
         password = interface.get('password', False)
+        proto = interface.get('proto', False)
 
-        if username and password:
+        if ((username and password) or (proto == "modemmanager")):
             return 'dialup'
 
         return 'other'

@@ -138,6 +138,7 @@ schema = merge_config(
                                     "pptp",
                                     "qmi",
                                     "wwan",
+                                    "modemmanager",
                                 ],
                                 "default": "pppoe",
                                 "propertyOrder": 8,
@@ -151,6 +152,23 @@ schema = merge_config(
                                 "type": "string",
                                 "description": "password for authentication in protocols like PPPoE",
                                 "propertyOrder": 10,
+                            },
+                            "apn": {
+                                "type": "string",
+                                "description": "APN to use for mobile data connection",
+                                "propertyOrder": 11,
+                            },
+                            "pincode": {
+                                "type": "string",
+                                "description": "PIN for authorising use of the SIM",
+                                "propertyOrder": 12,
+                            },
+                            "iptype": {
+                                "type": "string",
+                                "enum": ["ipv4", "ipv6", "ipv4v6"],
+                                "default": "ipv4v6",
+                                "description": "Preferred IP family for connection",
+                                "propertyOrder": 13,
                             },
                         }
                     },

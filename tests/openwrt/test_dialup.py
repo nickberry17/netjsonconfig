@@ -18,6 +18,16 @@ class TestDialup(unittest.TestCase, _TabsMixin):
                 "username": "dsluser",
                 "proto": "pppoe",
             },
+            {
+                "mtu": 1500,
+                "network": "mobiledata",
+                "type": "dialup",
+                "name": "mobiledata",
+                "password": "1n53cur3",
+                "username": "mobiledatauser",
+                "proto": "modemmanager",
+                "apn": "telstra.internet",
+            },
         ]
     }
 
@@ -29,6 +39,14 @@ config interface 'xdsl'
     option password 'jf93nf82o023$'
     option proto 'pppoe'
     option username 'dsluser'
+
+config interface 'mobiledata'
+    option apn 'telstra.internet'
+    option ifname 'mobiledata'
+    option mtu '1500'
+    option password '1n53cur3'
+    option proto 'modemmanager'
+    option username 'mobiledatauser'
 """
 
     def test_render_dialup_interface(self):
